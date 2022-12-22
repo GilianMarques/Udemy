@@ -1,0 +1,1 @@
+D:\solid\build\classes\kotlin\main\CarrinhoDeCompras.class;D:\solid\build\classes\kotlin\main\MainKt.class

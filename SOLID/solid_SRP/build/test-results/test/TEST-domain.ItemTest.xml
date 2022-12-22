@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="domain.ItemTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2022-12-21T02:32:40" hostname="DESKTOP-3KOB4UH" time="0.113">
+  <properties/>
+  <testcase name="validarItem()" classname="domain.ItemTest" time="0.023"/>
+  <testcase name="validarEstadoInicialItem()" classname="domain.ItemTest" time="0.003"/>
+  <testcase name="getDescricao()" classname="domain.ItemTest" time="0.002"/>
+  <testcase name="[1] 45.0, 45.0" classname="domain.ItemTest" time="0.02"/>
+  <testcase name="[2] -500.0, 1.0" classname="domain.ItemTest" time="0.001"/>
+  <testcase name="[3] 150000.0, 999.0" classname="domain.ItemTest" time="0.003"/>
+  <testcase name="[4] 0.0, 0.0" classname="domain.ItemTest" time="0.001"/>
+  <testcase name="[5] 60.0, 60.0" classname="domain.ItemTest" time="0.001"/>
+  <testcase name="[6] -2.0, 1.0" classname="domain.ItemTest" time="0.001"/>
+  <testcase name="[7] 1000.0, 999.0" classname="domain.ItemTest" time="0.004"/>
+  <system-out><![CDATA[Item valido? false
+Item valido? false
+Item valido? false
+Item valido? false
+Item valido? false
+Item valido? false
+Item valido? false
+Item valido? false
+Item valido? false
+Item valido? false
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
