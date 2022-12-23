@@ -1,0 +1,1 @@
+C:\GitHub_Desktop\Udemy\SOLID\solid_NO_SRP\build\classes\kotlin\main\CarrinhoDeCompras.class;C:\GitHub_Desktop\Udemy\SOLID\solid_NO_SRP\build\classes\kotlin\main\MainKt.class
