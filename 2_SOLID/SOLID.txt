@@ -1,7 +1,0 @@
-Conclusoes proprias sobre o solid:
-
-S SRP -> principio da responsabilidade unica: Cada componente (classe/funcao) deve ter apenas uma responsabilidade
-O OCP -> O codigo deve estar aberto p/ extenção e fechado p/ modificação: Deve ser possivel extender as funcionalidades do app sem modificar o codigo ja existente
-L LSP -> Uma subclasse deve poder ser usada no lugar da superclasse: "Quadrado não é retangulo"
-I ISP -> principio da segregação de interface. Um cliente nao deve depender de codigo que nao usa
-D DIP -> Modulos de alto/baixo nivel devem depender de abstraçoes: Deve-se usar uma abstração (classe abstrata/interface) para injetar uma dependencia numa classe
