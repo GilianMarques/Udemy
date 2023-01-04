@@ -1,0 +1,3 @@
+Indireção ou Delegação
+	
+	Uma maneira indireta de aplicar DRY e SRP ao delegar uma determinada tarefa a outra entidade evitando justamente a repetição e a soma de outras responsabilidades no codigo.

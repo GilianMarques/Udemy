@@ -1,0 +1,13 @@
+Lei de demeter - Principio do menor conhecimento
+	
+	Definição:
+		Um módulo nao deve enchergar o interior dos objetos que ele manipula
+
+Um metodo 'm' de uma classe 'C' só deve chamar:
+	Objetos do tipo C
+	Parametros passados para o metodo 'm' (Ex: g:P)
+	Um objeto criado pelo proprio 'm'
+	variaveis de instancia da classe 'C' (Ex: a:A)
+	
+Train Wreck: x.getY().getZ() (Acidente de trem)
+	'Voce nao deve mandar as pernas do cachorro andarem e sim o cachorro'

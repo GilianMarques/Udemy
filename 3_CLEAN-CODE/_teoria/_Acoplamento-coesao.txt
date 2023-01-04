@@ -1,0 +1,17 @@
+Acoplamento/coesao
+
+Alto acoplamento e baixa coesao (entre classes)
+	Poucas (e grandes) classes 
+	mais dependencia entre classes
+	Maior conhecimento (lei de demeter)
+	
+Baixo Acoplamento e alta coesao (entre classes)
+	Muitas (e pequenas) classes
+	Menos dependencias entre classes
+	Menor conhecimento
+	
+		"Uma classe pouco coesa sugere que uma nova classe deve nascer"
+		
+ 
+
+

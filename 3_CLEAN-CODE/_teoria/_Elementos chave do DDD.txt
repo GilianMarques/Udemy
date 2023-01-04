@@ -1,0 +1,12 @@
+Elementos chave do DDD
+
+-linguagem Onipresente/Ubíqua
+	Linguagem que nao deixa dúvidas sobre a entidade. Lignuagem usada pelo especialista no negocio deve serusada no codigo.
+	
+- Contexto delimitado
+	Partes do codigo bem isoladas, com capacidade para serem microserviços de tao independentes que sao
+	
+- Tijolos de construção
+	Entidades, objetos de valor
+	Eventos de dominio
+	Serviços, fabricas, repositorios

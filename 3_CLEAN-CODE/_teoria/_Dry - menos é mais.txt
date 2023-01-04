@@ -1,0 +1,10 @@
+Não se repita
+
+Definição:
+	Toda parte do conhecimento deve ter uma representação unica e livre de ambiguidades em todo o sistema
+
+Problemas
+	Mais trabalho: alterar mais vezes
+	Mais risco: encontrar todos os lugares
+	Mais teste: testar varias vezes a mesma coisa
+	Mais esforço de comunicação
