@@ -1,0 +1,10 @@
+Imutabilidade
+
+	Imutabilidade evita efeitos colaterais
+
+Vantagens da imutabilidade
+	Codigo mais seguro e confiavel
+	Minimiza testes e garantias
+	Paralelismo e escalabilidade
+	
+

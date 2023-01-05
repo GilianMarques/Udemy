@@ -1,0 +1,8 @@
+Funçao pura
+	
+	Para um certo 'input' sempre retorna o mesmo 'output'
+	nao causa nenhum efeito colateral
+	nao depende de nenhum dado externo (autocontida)
+	
+	Usar sempre que possivel. Em muitas situações não é possivel usar: DB, Integração, Estados, Etc...
+	Possivel em regras de negócio, métodos utilitários, internos, etc...
