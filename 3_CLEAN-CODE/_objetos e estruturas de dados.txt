@@ -1,0 +1,6 @@
+# Não existe uma regra clara especificando a diferença entre ambas as coisas
+
+- Objetos sao mutaveis econtem logica
+- Estruturas de dados (ex: Dto) representam um estado, e contem pouca ou nenhuma logica e tendem a ser imutaveis 
+
+ - A lei de demeter se aplica a objetos mas nao necessariamenta à estrutura de dados

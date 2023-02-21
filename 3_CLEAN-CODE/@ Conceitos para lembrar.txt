@@ -1,0 +1,37 @@
+# Nomes significativos
+
+Nomes faceis de ler e pronunciar que expressem com clareza a ultilidde da entidade 
+
+-Usar uma palavra por conceito:
+Não ficar alternando entre mostarDialogo e exibirDialogo, escolher uma palavra e usar em todo o projeto
+
+-Usar nomes relacionados ao problema/solucao:
+Usar esses nomes para ajudar a dar contexto ao objeto ItemDao, ItemDelegate, ItemBC, etc...
+
+
+# Comentarios
+
+-Antes de escrever um comentario, verifique se nao cabe, nesse caso, uma refatoração
+
+-Comentarios devem ser a última opção:
+O programador deve se expressar atraves do proprio codigo e ter cuidado para que o comentario nao esteja apenas compensando um codigo mal escrito. Os comentarios tambem precisam de manutençao e sao até mais dificies de manter que o proprio codigo por tanto devem ser a ultima opçao mesmo.
+
+# Funções
+
+-Funçoes devem ser pequenas ~20 linhas, se ja nao cabe na tela talvez seja necessario refatorar (é +- isso) pode variar
+
+-Fazer apenas uma coisa
+
+-Um nivel de abstraçao, separar o que é essencial pra funçao e delegar os pre e pos requisitos
+
+-Minimo de parametros possiveis
+
+# Funções puras
+
+-Para um certo input sempre retorna o mesmo output7
+
+-Não causa nenhum efeito colateral
+
+-Não depende de nenhum dado externo
+
+

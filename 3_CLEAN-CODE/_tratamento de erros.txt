@@ -1,0 +1,5 @@
+- Usar excessões ao inves de retornar codigos de erro
+- É interessante empacotar a exception que aconteceu dentro de sua propria exception para que nao se perca o contexto do erro
+- Evite ocultar a exception e retornar null 
+- Pode ser interessante criar uma classe de exception propria para encapsuar uma exception de uma biblioteca ou api que faz parte da infra-estrutura e que pode ser substituida. Essa açao facilitaria essa substituição
+ 
