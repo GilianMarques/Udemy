@@ -1,0 +1,14 @@
+
+Complexidade ciclomatica
+Definição: É uma metrica de software que indica a complexidade de um programa. 
+A complexidade ciclomatica mede a quantidade de caminhos linearmente independentes no codigo fonte (função por exemplo).  
+É a medida de quao dificil é testar uma unidade de codigo. 
+
+A complexidade ciclomatica tende a ser a quantidade de cenarios de teste necessarios para cobrir as linhas de codigo
+
+Quanto maior a complexidade ciclomatica de um codigo, mais dificil é pra testar e manter 
+
+A analise da complexidade ciclomatica deve ser feita de maneira tempestiva, de acordo com o desenvolvimento do codigo, assim como os testes unitarios.
+
+Veja os slides para saber como calcular a complexidade ciclomatica, vale apena observar que uma alternativa para o calculo é nao contar os 'returns' o qué é feito no modelo mais antigo de calculo que é mostrado nos slides por que na pratica eles nao adicionam complexidade no codigo. O slide "sem-contar-returns" tem um exemplo
+

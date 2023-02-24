@@ -5,7 +5,7 @@ TDD - Test Driven Design
 	Faz o teste passar ao construir o codigo produtivo
 	Refatora o codigo até o teste falhar (ou não)
 	
-Teste Tempestivos (TDD inclusive)	
+Teste Tempestivos (TDD inclusive) - Testar o codigo conforme for escrevendo
 	Atividade de engenharia (Código e Design)
 	Feedback rápido sobre o código testado (erra cedo)
 	Gera código limpo através da dificuldade de testar o código

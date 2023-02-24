@@ -7,7 +7,7 @@ import kotlin.random.Random
  * Classes:
  *  PedraPapelTesoura: recebe um par de jogadores e um numero de partidas, controla o fluxo do jogo
  *  Partida: recebe um par de jogadores e avalia quem venceu ou se deu empate
- *  Jogador: recebe um nome e da uma mao aleatoria
+ *  Jogador: recebe um nome, armazena sua pontuaçao e da uma mao aleatoria
  *  Mao (Enum) : pode ser pedra, papel ou tesoura
  *
  * A classe PedraPapelTesoura itera pela quantidade de partidas , usando a classe Partida para comparar as maos e obter um
@@ -16,19 +16,40 @@ import kotlin.random.Random
  */
 fun main() {
 
-    val j1 = Jogador("Jogador 1")
-    val j2 = Jogador("Jogador 2")
+    val jogador1 = Jogador("Jogador 1")
+    val jogador2 = Jogador("Jogador 2")
 
-    PedraPapelTesoura(j1, j2, 5).jogar()
+    PedraPapelTesoura(jogador1, jogador2, 5).jogar()
+
+    exibirResultado(jogador1, jogador2)
+
+}
+
+private fun exibirResultado(jogador1: IJogador, jogador2: IJogador) {
+    println("\n")
+    if (jogador1.vitorias == jogador2.vitorias)
+        println("Empate! ${jogador1.vitorias}/${jogador2.vitorias}")
+    else {
+        val vencedor = if (jogador1.vitorias > jogador2.vitorias) jogador1 else jogador2
+        println(
+            "Vencedor da partida é o ${vencedor.nome}: " +
+                    "${jogador1.vitorias.coerceAtLeast(jogador2.vitorias)}" +
+                    "/" +
+                    "${jogador1.vitorias.coerceAtMost(jogador2.vitorias)}"
+        )
+    }
 
 }
 
 interface IJogador {
     val nome: String
+    var vitorias: Int
+
     fun maoAleatoria(): Mao
 }
 
 data class Jogador(override val nome: String) : IJogador {
+    override var vitorias = 0
     override fun maoAleatoria() = Mao.values()[Random.nextInt(3)]
 }
 
@@ -40,7 +61,7 @@ enum class Mao {
     /**
      * @return false se a mao atual nao vence ou empata com a mao recebida
      * */
-    fun vence(outraMao: Mao) = when (this) {
+    infix fun vence(outraMao: Mao) = when (this) {
         //Pedra vence Tesoura, Tesoura vence Papel, Papel vence Pedra
         PEDRA -> outraMao == TESOURA
         TESOURA -> outraMao == PAPEL
@@ -51,25 +72,25 @@ enum class Mao {
 
 class Partida(val jogador1: IJogador, val jogador2: IJogador) {
 
-    var j2Mao: Mao
+    var maoJogador2: Mao
         private set
 
-    var j1Mao: Mao
+    var maoJogador1: Mao
         private set
 
     init {
-        j1Mao = jogador1.maoAleatoria()
-        j2Mao = jogador2.maoAleatoria()
+        maoJogador1 = jogador1.maoAleatoria()
+        maoJogador2 = jogador2.maoAleatoria()
         exibirJogadas()
     }
 
     private fun exibirJogadas() {
-        print("${jogador1.nome} escolheu ${j1Mao.name}, ${jogador2.nome} escolheu ${j2Mao.name}: ")
+        print("${jogador1.nome} escolheu ${maoJogador1.name}, ${jogador2.nome} escolheu ${maoJogador2.name}: ")
     }
 
-    fun getVencedor(): IJogador? {
-        return if (j1Mao == j2Mao) null
-        else if (j1Mao.vence(j2Mao)) jogador1
+    fun getVencedorSeHouver(): IJogador? {
+        return if (maoJogador1 == maoJogador2) null
+        else if (maoJogador1 vence maoJogador2) jogador1
         else jogador2
 
     }
@@ -77,54 +98,45 @@ class Partida(val jogador1: IJogador, val jogador2: IJogador) {
 
 class PedraPapelTesoura(val jogador1: IJogador, val jogador2: IJogador, val partidas: Int) {
 
-    private var vitoriasJogador1 = 0
-    private var vitoriasJogador2 = 0
+    var partidasJogadas = 0
+        private set
 
     fun jogar() {
         for (i in 0 until partidas) {
             val partida = Partida(jogador1, jogador2)
+            partidasJogadas++
 
             contabilizarResultado(partida)
             if (houveVitoriaAntecipada()) break
         }
-
-        exibirPossivelVencedor()
     }
 
     private fun contabilizarResultado(partida: Partida) {
 
-        val vencedor = partida.getVencedor()
+        val vencedor = partida.getVencedorSeHouver()
 
         if (vencedor == null) println("Empate")
         else if (vencedor == jogador1) {
-            vitoriasJogador1++
+            jogador1.vitorias++
             println("${jogador1.nome} venceu rodada")
         } else {
-            vitoriasJogador2++
+            jogador2.vitorias++
             println("${jogador2.nome} venceu rodada")
         }
 
     }
 
     private fun houveVitoriaAntecipada(): Boolean {
-        return ((vitoriasJogador1 != vitoriasJogador2)
-                && (vitoriasJogador1 > (partidas / 2)
-                || vitoriasJogador2 > (partidas / 2)))
+        return ((jogador1.vitorias != jogador2.vitorias)
+                && (jogador1.vitorias > (partidas / 2)
+                || jogador2.vitorias > (partidas / 2)))
     }
 
-    private fun exibirPossivelVencedor() {
-        println("\n")
-        if (vitoriasJogador1 == vitoriasJogador2)
-            println("Empate! $vitoriasJogador1/$vitoriasJogador2")
-        else {
-            val vencedor = if (vitoriasJogador1 > vitoriasJogador2) jogador1 else jogador2
-            println(
-                "Vencedor da partida é o ${vencedor.nome}: " +
-                        "${vitoriasJogador1.coerceAtLeast(vitoriasJogador2)}" +
-                        "/" +
-                        "${vitoriasJogador1.coerceAtMost(vitoriasJogador2)}"
-            )
-        }
+
+    fun getVencedorSeHouver(): IJogador? {
+        return if (jogador1.vitorias == jogador2.vitorias) null
+        else if (jogador1.vitorias > jogador2.vitorias) jogador1
+        else jogador2
 
     }
 
